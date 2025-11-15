@@ -1,0 +1,15 @@
+#! /bin/sh
+
+cd "`dirname $0`/vendor"
+
+git clone https://github.com/alg0002/qmk_firmware.git alg0002_qmk
+git clone https://github.com/alg0002/vial-qmk.git alg0002_vial
+
+git clone https://github.com/foostan/kbd_firmware.git foostan
+
+git clone https://github.com/qmk/qmk_firmware.git qmk
+
+git clone https://github.com/the-via/qmk_userspace_via.git via_userspace
+git clone https://github.com/the-via/keyboards.git via_keyboards
+
+git clone https://github.com/vial-kb/vial-qmk.git vial_qmk

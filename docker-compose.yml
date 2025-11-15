@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    restart: no
+    network_mode: none
+    command: ["sleep", "inf"]
+    volumes:
+      - ./keyboards:/vial-qmk/keyboards/

@@ -1,0 +1,10 @@
+#! /bin/bash
+
+cd /vial-qmk
+
+qmk compile -kb opa/crkbd/rev4_1/standard -km vial
+qmk compile -kb opa/hhkb/jp -km vial
+qmk compile -kb opa/teihai70h -km vial
+
+chmod 666 *.{hex,bin,uf2}
+mv *.{hex,bin,uf2} keyboards/opa/

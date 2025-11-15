@@ -1,0 +1,4 @@
+/keyboards/opa/*.bin
+/keyboards/opa/*.hex
+/keyboards/opa/*.uf2
+/vendor/

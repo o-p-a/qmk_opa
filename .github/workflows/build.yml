@@ -1,0 +1,36 @@
+name: Build QMK firmware
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: qmkfm/qmk_cli
+
+    steps:
+    - name: Disable git safe directory checks
+      run : git config --global --add safe.directory '*'
+
+    - name: Setup QMK
+      run : |
+        qmk setup -y vial-kb/vial-qmk -b vial -H /vial-qmk
+        rm -rf /vial-qmk/keyboards/*
+
+    - name: Checkout userspace
+      uses: actions/checkout@v3
+
+    - name: Merge userspace to tree
+      run : cp -rf keyboards/ /vial-qmk/
+
+    - name: Build firmware
+      run: |
+        qmk compile -kb opa/crkbd/rev4_1/standard -km vial
+        qmk compile -kb opa/hhkb/jp -km vial
+        qmk compile -kb opa/teihai70h -km vial
+
+    - name: Archive firmware
+      uses: actions/upload-artifact@v5
+      with:
+        path: |
+          /vial-qmk/*.hex
+          /vial-qmk/*.bin
+          /vial-qmk/*.uf2
