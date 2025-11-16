@@ -12,3 +12,8 @@ SRC = matrix.c
 # debug-off: EXTRAFLAGS += -DNO_DEBUG -DNO_PRINT
 # debug-off: OPT_DEFS := $(filter-out -DCONSOLE_ENABLE,$(OPT_DEFS))
 # debug-off: all
+
+LTO_ENABLE = yes
+QMK_SETTINGS = no
+COMBO_ENABLE = no
+REPEAT_KEY_ENABLE = no

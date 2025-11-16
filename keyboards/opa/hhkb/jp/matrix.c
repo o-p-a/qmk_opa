@@ -184,10 +184,10 @@ matrix_row_t matrix_get_row(uint8_t row)
 
 void matrix_print(void)
 {
-    print("\nr/c 01234567\n");
-    for (uint8_t row = 0; row < matrix_rows(); row++) {
-        xprintf("%02X: %08b\n", row, bitrev(matrix_get_row(row)));
-    }
+    // print("\nr/c 01234567\n");
+    // for (uint8_t row = 0; row < matrix_rows(); row++) {
+    //     xprintf("%02X: %08b\n", row, bitrev(matrix_get_row(row)));
+    // }
 }
 
 void matrix_power_up(void) {

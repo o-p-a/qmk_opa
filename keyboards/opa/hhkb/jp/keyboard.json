@@ -11,10 +11,12 @@
   "bootloader": "atmel-dfu",
   "features": {
     "bootmagic": true,
-    "mousekey": true,
+    "command": false,
+    "console": false,
+    "dynamic_macro": true,
     "extrakey": true,
-    "console": true,
-    "command": true
+    "mousekey": false,
+    "nkro": false
   },
   "layouts": {
     "LAYOUT_jp": {
