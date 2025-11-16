@@ -37,3 +37,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_LAYER
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
+
+// Reduce firmware size by decreasing number of functions
+#define DYNAMIC_KEYMAP_LAYER_COUNT 3
+#define VIAL_KEY_OVERRIDE_ENTRIES 5
+#define VIAL_TAP_DANCE_ENTRIES 5
